@@ -24,5 +24,10 @@ dist-ssr
 *.sw?
 
 # Folders
+<<<<<<< HEAD
 backend
 api.php
+=======
+./backend
+./api.php
+>>>>>>> 12b2e76a835c308775cfed5474990bf39b9c6b2c

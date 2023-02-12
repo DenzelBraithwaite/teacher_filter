@@ -1,7 +1,9 @@
 <?php
     // Headers
     header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: GET');
     header('Content-Type: application/json');
+    header('Accept: application/json');
 
     include_once '../../Database.php';
     include_once '../../models/Teacher.php';
@@ -11,7 +13,7 @@
     $pdo = $database->connect();
 
     // Instantiate Teacher object
-    $teacher = new Teacher($database);
+    $teacher = new Teacher($pdo);
 
     // Teacher query
     $result = $teacher->read();
@@ -28,11 +30,10 @@
             extract($row);
 
             $teacher_item = [
-                'id' => $id,
                 'subject' => $subject,
                 'grade' => $grade,
-                'firstName' => $firstName,
-                'lastName' => $lastName,
+                'firstName' => $first_name,
+                'lastName' => $last_name,
                 'school' => $school
             ];
 

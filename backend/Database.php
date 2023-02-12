@@ -2,10 +2,11 @@
     class Database {
         // DB Params
         // private $host = 'localhost';
-        private $serverName = 'KAZDESKTOP';
-        private $databaseName = 'lbpsb_project';
-        private $username = 'kaz';
-        private $password = '';
+        // private $serverName = 'localhost\KAZDESKTOP';
+        // private $databaseName = 'lbpsb_project';
+        // private $username = 'kaz';
+        // private $password = '';
+        private $dsn = "sqlsrv:Driver=sqlsrv;sqlsrv:Server=localhost\KAZDESKTOP;Database=lbpsb_project;";
         private $conn;
 
         // DB Connect
@@ -13,10 +14,7 @@
             $this->conn = null;
 
             try {
-                $this->conn = new PDO(
-                    "sqlsrv:Server={$this->serverName};
-                    Database={$this->databaseName};"
-                );
+                $this->conn = new PDO($dsn, 'kaz', '36912');
                 $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } catch(PDOException $e) {
                 echo 'Connection Error: ' . $e->getMessage();

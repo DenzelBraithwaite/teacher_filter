@@ -20,7 +20,8 @@
         // Get / Read Teachers
         public function read() {
             // Create Query
-            $query = "SELECT * FROM {$table}";
+            // $query = "SELECT * FROM {$table}";
+            $query = "SELECT * FROM filter_teachers";
             $stmt = $this->pdo->prepare($query);
             $stmt->execute();
             return $stmt;

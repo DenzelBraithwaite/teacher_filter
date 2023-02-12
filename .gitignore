@@ -24,5 +24,4 @@ dist-ssr
 *.sw?
 
 # Folders
-_backend/
-api.php
+backend/api/api.php

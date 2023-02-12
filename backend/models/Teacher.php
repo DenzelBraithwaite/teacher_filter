@@ -14,14 +14,14 @@
 
         // Constructor
         public function __construct($db) {
-            $this->conn = $db;
+            $this->pdo = $db;
         }
 
         // Get / Read Teachers
         public function read() {
             // Create Query
             $query = "SELECT * FROM {$table}";
-            $stmt = $this->conn->prepare($query);
+            $stmt = $this->pdo->prepare($query);
             $stmt->execute();
             return $stmt;
         }

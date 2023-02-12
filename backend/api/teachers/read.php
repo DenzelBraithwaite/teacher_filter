@@ -16,7 +16,7 @@
     $teacher = new Teacher($pdo);
 
     // Teacher query
-    $result = $teacher->read();
+    $result = $teacher->readAll();
 
     // Get row count
     $num = $result->rowCount();

@@ -18,7 +18,7 @@
         }
 
         // Get / Read Teachers
-        public function read() {
+        public function readAll() {
             // Create Query
             // $query = "SELECT * FROM {$table}";
             $query = "SELECT * FROM filter_teachers";

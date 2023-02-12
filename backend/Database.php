@@ -4,18 +4,18 @@
         // private $host = 'localhost';
         // private $serverName = 'localhost\KAZDESKTOP';
         // private $databaseName = 'lbpsb_project';
-        // private $username = 'kaz';
-        // private $password = '';
+        // private $username = 'test';
+        // private $password = 'test';
         private $dsn = "sqlsrv:Driver=sqlsrv;sqlsrv:Server=localhost\KAZDESKTOP;Database=lbpsb_project;";
-        private $conn;
+        private $pdo;
 
         // DB Connect
         public function connect() {
-            $this->conn = null;
+            $this->pdo = null;
 
             try {
-                $this->conn = new PDO($dsn, 'kaz', '36912');
-                $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $this->pdo = new PDO($this->dsn, 'test', 'test');
+                $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } catch(PDOException $e) {
                 echo 'Connection Error: ' . $e->getMessage();
             }
